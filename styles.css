@@ -253,7 +253,6 @@ body.dark-mode section {
 /* Hero Section */
 .hero {
   height: 70vh;
-  background: url('../images/hero-banner.jpg') center/cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -351,4 +350,5 @@ body.dark-mode section {
 
 .workout-buttons button:hover {
   background: #1a5a8a;
+
 }
