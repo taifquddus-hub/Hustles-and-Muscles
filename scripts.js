@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function validateForm(event) {
-  event.preventDefault(); // Prevent the form from submitting if there are validation errors
+  event.preventDefault(); 
 
   // Get form field values
   const name = document.getElementById("full-name").value.trim();
@@ -15,7 +15,7 @@ function validateForm(event) {
   const fitnessGoals = document.getElementById("fitness-goals").value.trim();
   
   const membershipType = document.getElementById("membership-type").value;
-  const paymentMethod = document.getElementById("payment-method").value; // New Payment Method
+  const paymentMethod = document.getElementById("payment-method").value; 
 
   let errors = [];
 
@@ -60,31 +60,30 @@ function validateForm(event) {
 
   if (errors.length === 0) {
     alert("Form submitted successfully!");
-    form.reset(); // Clear the form
+    form.reset(); 
   }
 }
 
 function displayErrors(errors) {
   const errorDiv = document.getElementById("form-errors");
-  errorDiv.innerHTML = ""; // Clear previous errors
+  errorDiv.innerHTML = ""; 
   if (errors.length > 0) {
     errors.forEach((error) => {
       const p = document.createElement("p");
       p.innerText = error;
-      p.style.color = "red"; // Red color for errors
+      p.style.color = "red";
       errorDiv.appendChild(p);
     });
   }
 }
 
 //--------------- Light/Dark Mode Toggle ---------------
-//--------------- Light/Dark Mode Toggle ---------------
 function toggleDarkMode() {
-  // Toggle the 'dark-mode' class on the body element
+
   const body = document.body;
   body.classList.toggle("dark-mode");
 
-  // Update button text dynamically
+
   const button = document.querySelector("button[onclick='toggleDarkMode()']");
   if (body.classList.contains("dark-mode")) {
     button.innerText = "Switch to Light Mode";
@@ -109,12 +108,12 @@ const workouts = [
 // Helper function to generate a random workout routine
 function generateWorkout(intensity) {
   const workoutDiv = document.getElementById("workout-output");
-  workoutDiv.innerHTML = ""; // Clear any existing output
+  workoutDiv.innerHTML = ""; 
 
   let numberOfExercises;
-  if (intensity === "light") numberOfExercises = 1; // Light: 1 exercise
-  else if (intensity === "moderate") numberOfExercises = 3; // Moderate: 3 exercises
-  else if (intensity === "intense") numberOfExercises = 5; // Intense: 5 exercises
+  if (intensity === "light") numberOfExercises = 1; 
+  else if (intensity === "moderate") numberOfExercises = 3; 
+  else if (intensity === "intense") numberOfExercises = 5; 
 
   const selectedWorkouts = [];
   while (selectedWorkouts.length < numberOfExercises) {
@@ -138,3 +137,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("moderate-workout").addEventListener("click", () => generateWorkout("moderate"));
   document.getElementById("intense-workout").addEventListener("click", () => generateWorkout("intense"));
 });
+
